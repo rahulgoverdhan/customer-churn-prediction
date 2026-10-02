@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "customer-churn-prediction"
+version = "0.1.0"
+description = "End-to-end Customer Churn Prediction & Business Analytics"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.2.2",
+    "numpy>=1.26.4",
+    "scikit-learn>=1.5.1",
+    "matplotlib>=3.8.4",
+    "seaborn>=0.24.0",
+    "streamlit>=1.39.0",
+    "shap>=0.46.0",
+    "joblib>=1.4.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[project.optional-dependencies]
+dev = [
+    "jupyter>=1.1.3",
+    "pytest>=8.3.0",
+    "ipykernel>=6.29.0",
+]
