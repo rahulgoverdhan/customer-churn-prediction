@@ -272,9 +272,11 @@ def prepare_modeling_data(df: pd.DataFrame, test_size: float = 0.2, val_size: fl
 if __name__ == "__main__":
     # Example usage
     import pandas as pd
+    from pathlib import Path
 
-    # Load cleaned data
-    df = pd.read_csv('../data/processed/cleaned.csv')
+    # Load cleaned data (resolved relative to the repository root)
+    repo_root = Path(__file__).resolve().parent.parent
+    df = pd.read_csv(repo_root / 'data' / 'processed' / 'cleaned.csv')
     print(f"Original data shape: {df.shape}")
 
     # Apply feature engineering

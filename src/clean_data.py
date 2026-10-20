@@ -1,9 +1,16 @@
 """Clean the raw Telco Customer Churn dataset and save processed version."""
+from pathlib import Path
+
 import pandas as pd
 import numpy as np
 
+# Resolve paths relative to the repository root so the script runs from any directory
+REPO_ROOT = Path(__file__).resolve().parent.parent
+RAW_DATA_PATH = REPO_ROOT / 'data' / 'raw' / 'telco_churn.csv'
+PROCESSED_DATA_PATH = REPO_ROOT / 'data' / 'processed' / 'cleaned.csv'
+
 # Load raw data
-df = pd.read_csv('C:/Users/omen/customer-churn-predict/data/raw/telco_churn.csv')
+df = pd.read_csv(RAW_DATA_PATH)
 
 print('=== ORIGINAL DATASET ===')
 print(f'Rows: {len(df)}, Columns: {len(df.columns)}')
@@ -61,6 +68,6 @@ print('Data types:')
 print(df.dtypes)
 
 # Save cleaned data
-df.to_csv('C:/Users/omen/customer-churn-predict/data/processed/cleaned.csv', index=False)
+df.to_csv(PROCESSED_DATA_PATH, index=False)
 print()
-print('Cleaned dataset saved to data/processed/cleaned.csv')
+print(f'Cleaned dataset saved to {PROCESSED_DATA_PATH}')

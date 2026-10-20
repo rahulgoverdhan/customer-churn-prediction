@@ -4,7 +4,7 @@ Customer Churn Prediction — interactive prediction + analytics.
 """
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import streamlit as st
 import pandas as pd
